@@ -8,6 +8,13 @@
     </block>
   </view>
   <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+    <text class="user-motto" bindtap='changeName'>{{motto}}</text>
+    <view>
+      <button bindtap='gotoSpells'>{{'点击跳转'}}</button>
+    </view>
+    <view>
+      <button bindtap='logout'>{{'退出登录'}}</button>
+    </view>
   </view>
+
 </view>

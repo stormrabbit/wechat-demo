@@ -9,6 +9,23 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
+  changeName:function(){
+    console.log(this)
+    const {
+      userInfo:{
+        nickName
+      }
+    } = this.data;
+    this.setData({ motto: `Hello ${nickName}`})
+  },
+  gotoSpells:function(){
+    wx.navigateTo({
+      url: '/pages/spells/spells',
+    })
+  },
+  logout:function(){
+    this.setData({ userInfo: {}, hasUserInfo: false});
+  },
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({
