@@ -7,7 +7,18 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    visible: false
+  },
+  onShareAppMessage:function(){
+    return {
+      title: '测试',
+      desc: '我的第一个小程序',
+      path: '/pages/index/index'
+    }
+  },
+  dogHug: function(){
+    this.setData({ visible: true });
   },
   changeName:function(){
     console.log(this)

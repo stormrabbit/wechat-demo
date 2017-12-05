@@ -1,20 +1,14 @@
 <!--index.wxml-->
 <view class="container">
   <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto" bindtap='changeName'>{{motto}}</text>
-    <view>
-      <button bindtap='gotoSpells'>{{'点击跳转'}}</button>
+    <text>{{visible? '汪汪汪':'心情不好怎么办？'}}</text>
+    <view style='margin-top: 60rpx'>
+      <button wx:if="{{!visible}}" bindtap='dogHug'>点我试试</button>
+      <block wx:else>
+        <image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1512495896522&di=1beaea4b752034e8a24e321ecf87421f&imgtype=0&src=http%3A%2F%2Fimg1.bimg.126.net%2Fphoto%2FE676BOcNIsGWtkYOfpP1DA%3D%3D%2F1424263382156977516.jpg" mode="widthFix"></image>
+      </block>
     </view>
-    <view>
-      <button bindtap='logout'>{{'退出登录'}}</button>
-    </view>
+
   </view>
 
 </view>
